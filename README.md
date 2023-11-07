@@ -5,7 +5,8 @@
 
 ## Introduction
 
-In this project, I build a mini honeynet in Azure and ingest log sources from various resources into a Log Analytics workspace, which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 24 hours, apply some security controls to harden the environment, measure metrics for another 24 hours, then show the results below. The metrics we will show are:
+In this project, I constructed a compact honeynet within Azure and collected log data from diverse sources, funneling it into a Log Analytics workspace. This data was subsequently leveraged by Microsoft Sentinel to construct attack visualizations, initiate alerts, and generate incident reports. Over the course of this project, I conducted two sets of security metric assessments within an initially vulnerable environment: one over a 24-hour period, followed by the implementation of security measures to harden the environment, and another 24-hour assessment. then show the results below. The metrics we will show are"
+
 
 - SecurityEvent (Windows Event Logs)
 - Syslog (Linux Event Logs)
@@ -37,9 +38,11 @@ For the "BEFORE" metrics, all resources were originally deployed, exposed to the
 For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
 
 ## Attack Maps Before Hardening / Security Controls
-![NSG Allowed Inbound Malicious Flows](https://i.imgur.com/1qvswSX.png)<br>
-![Linux Syslog Auth Failures](https://i.imgur.com/G1YgZt6.png)<br>
-![Windows RDP/SMB Auth Failures](https://i.imgur.com/ESr9Dlv.png)<br>
+![Before Hardening Network-Sec-Group-Malicious-Allowed-in](https://github.com/MamusIbebe/MS-AZURE-HONEYNET-SOC-MANAGEMNT/assets/149246488/94d2b52a-49df-4c4d-929d-6e6afcc0824e)<br>
+![Before Hardening Linux-ssh-auth-fail](https://github.com/MamusIbebe/MS-AZURE-HONEYNET-SOC-MANAGEMNT/assets/149246488/4066c2f1-428f-4344-9b88-bd76601b83e1)<br>
+![After Hardening Windows-RDP_Auth-Failure](https://github.com/MamusIbebe/MS-AZURE-HONEYNET-SOC-MANAGEMNT/assets/149246488/8a8caf98-8609-4843-bc98-146e4164c6bc)<br>
+![Before Hardening MS-SQL-Auth-Fail](https://github.com/MamusIbebe/MS-AZURE-HONEYNET-SOC-MANAGEMNT/assets/149246488/baf05324-28bf-4425-8c66-6187f38e7096)<br>
+
 
 ## Metrics Before Hardening / Security Controls
 
@@ -49,11 +52,24 @@ The following table shows the metrics we measured in our insecure environment fo
 ![image](https://github.com/MamusIbebe/MS-AZURE-HONEYNET-SOC-MANAGEMNT/assets/149246488/dc40147a-2772-431d-a647-490d9f21ac5f)
 
 
+
 	
 
 ## Attack Maps Before Hardening / Security Controls
 
 ```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
+
+## Attack Maps After Hardening / Security Controls
+
+![image](https://github.com/MamusIbebe/MS-AZURE-HONEYNET-SOC-MANAGEMNT/assets/149246488/cd25ab5f-55e8-4ec9-95af-432a973d7b1a)
+
+![image](https://github.com/MamusIbebe/MS-AZURE-HONEYNET-SOC-MANAGEMNT/assets/149246488/70ada3b1-d193-4e75-957d-51350739dad0)
+
+![image](https://github.com/MamusIbebe/MS-AZURE-HONEYNET-SOC-MANAGEMNT/assets/149246488/0eb64ccf-9dcb-4eb6-bb7b-55e9aa83ea66)
+
+![image](https://github.com/MamusIbebe/MS-AZURE-HONEYNET-SOC-MANAGEMNT/assets/149246488/d8e95d67-5676-4342-9dfe-5dfda1c63681)
+
+		...Note: If you noticed the qury retured no result because the VMs have hardened, therefore there is no incident as of 24hrs ago.
 
 ## Metrics After Hardening / Security Controls
 
