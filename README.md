@@ -5,7 +5,7 @@
 
 ## Introduction
 
-In this project, I constructed a compact honeynet within Azure and collected log data from diverse sources, funneling it into a Log Analytics workspace. This data was subsequently leveraged by Microsoft Sentinel to construct attack visualizations, initiate alerts, and generate incident reports. Over the course of this project, I conducted two sets of security metric assessments within an initially vulnerable environment: one over a 24-hour period, followed by the implementation of security measures to harden the environment, and another 24-hour assessment. then show the results below. The metrics we will show are"
+In this project, I created a mini honeynet within Microsoft Azure and collected log data from various sources, confoguring and linking it into a Log Analytics workspace. This data was subsequently leveraged by Microsoft Sentinel to create attack visualizations, initiate alerts, and generate incident reports. Over the course of this project, I conducted two sets of security metric assessments within an initially vulnerable environment: one over a 24-hour period, followed by the implementation of security measures to harden the environment, and another 24-hour assessment. then show the results below. The metrics we will show are"
 
 
 - SecurityEvent (Windows Event Logs)
@@ -13,6 +13,7 @@ In this project, I constructed a compact honeynet within Azure and collected log
 - SecurityAlert (Log Analytics Alerts Triggered)
 - SecurityIncident (Incidents created by Sentinel)
 - AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
+- Result after Hardening.
 
 ## Architecture Before Hardening / Security Controls
 ![image](https://github.com/MamusIbebe/MS-AZURE-HONEYNET-SOC-MANAGEMNT/assets/149246488/e81c6c0c-2417-4f98-94be-0ea21390ab0c)
