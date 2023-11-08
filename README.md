@@ -78,6 +78,45 @@ The following table shows the metrics we measured in our environment for another
 
 ![image](https://github.com/MamusIbebe/MS-AZURE-HONEYNET-SOC-MANAGEMNT/assets/149246488/0ff5a054-8724-4d59-b794-b32fa6108ab4)
 
+## Applying NIST 800-61  Incidence Response
+
+# Incidence Response on Malware
+
+# Preparation: Custome Malware detected
+- Incident: 20
+- SystemAlertId in("54de6de2-fba9-d459-d981-712c38077088")
+- Windows-vm
+  
+Several other alert raised for this activites this vm involved with.
+
+# Analyzing and Detection: 
+After care investigation and querying and determining the legitimacy of this incident, we come to the fact that it's a False Positive because it was a test from the system Engr, verified by the manager. So I closed it out.
+ 
+This was the query I used for my investigation and no result was found.
+
+ 		SecurityAlert
+		|where AlertType == "AntimalwareActionTaken"
+		|where CompromisedEntity == "windows-vm"
+		|where RemediationSteps !has "No user action is necessary"
+		|where ExtendedProperties !has "EICAR"
+
+# Containment/Eradication: 
+I do not necessarily need any cotainment since it was triggered by approved authority. 
+
+# Malware Detected
+![image](https://github.com/MamusIbebe/MS-AZURE-HONEYNET-SOC-MANAGEMNT/assets/149246488/d413f8bd-2ca1-4265-905e-ae8c57025e9c)
+
+![image](https://github.com/MamusIbebe/MS-AZURE-HONEYNET-SOC-MANAGEMNT/assets/149246488/b3b19668-24d3-4cfc-8169-8f1d3efa58d6)
+
+# I assigned the ticket to an account.
+
+![image](https://github.com/MamusIbebe/MS-AZURE-HONEYNET-SOC-MANAGEMNT/assets/149246488/c597f788-dc7d-4661-9d78-5bba2b45850c)
+# Investigation 
+![image](https://github.com/MamusIbebe/MS-AZURE-HONEYNET-SOC-MANAGEMNT/assets/149246488/dce4455d-8d87-4ffd-9d5a-11be70a63306)
+
+
+
+
 
 ## Conclusion
 
