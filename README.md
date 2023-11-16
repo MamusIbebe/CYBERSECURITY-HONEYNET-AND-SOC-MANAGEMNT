@@ -82,7 +82,7 @@ The following table shows the metrics we measured in our environment for another
 
 # Incidence Response on Malware
 
-# Preparation: Custome Malware detected
+# Preparation: Custom Malware detected
 - Incident: 20
 - SystemAlertId in("54de6de2-fba9-d459-d981-712c38077088")
 - Windows-vm
